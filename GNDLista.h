@@ -7,16 +7,16 @@ class GNDLista {
     private:
         class Vertice{
             public:
-                char etiq;
-                Vertice(char);
+                char* etiq;
+                Vertice(char*);
                 ~Vertice();
         }
         class Arista{
             public:
                 int peso;
-                Vertice VerticeA;
-                Vertice VerticeB;
-                Arista(Vertice, Vertice, int);
+                Vertice* VerticeA;
+                Vertice* VerticeB;
+                Arista(Vertice*, Vertice*, int);
                 ~Arista();
         }
     public:
@@ -24,16 +24,17 @@ class GNDLista {
         ~GNDLista();
         void vaciar();
         int vacia();
-        Vertice agrVertice (char); // Cambiar el return a vértice
-        void agrArista(Vertice,Vertice,int);
-        void modificarPeso(Vertice,Vertice, int);
-        void elimVertice(Vertice);
-        void elimArista(Vertice, Vertice);
-        void modificarEtiqueta(Vertice, char);
-        char etiqueta(Vertice);
+        Vertice* agrVertice (char); // Cambiar el return a vértice
+        int peso(Vertice*,Vertice*);
+        void agrArista(Vertice*,Vertice*,int);
+        void modificarPeso(Vertice*,Vertice*, int);
+        void elimVertice(Vertice*);
+        void elimArista(Vertice*, Vertice*);
+        void modificarEtiqueta(Vertice*, char);
+        char etiqueta(Vertice*);
         int numVertices();
         int numVerticesAdy();
-        int adyacentes(Vertice, Vertice)
+        int adyacentes(Vertice*, Vertice*)
 };
 
 #endif

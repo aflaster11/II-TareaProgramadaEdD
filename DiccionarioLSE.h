@@ -1,10 +1,13 @@
 #ifndef diccionario_2017
 #define diccionario_2017
-
+#include <iostream>
+using namespace std;
 template <class T>
 class DiccionarioLSE  {
-    class box;
     private:
+        class box;
+        box* primero;
+        box* ultimo;
         int numeroElementos;
         class box {
             public:
@@ -15,26 +18,29 @@ class DiccionarioLSE  {
                     this->elemento = elemento;
                     this->siguiente = 0;
                 };
-                ~box(T elemento){
-                    delete this->siguiente;
+                ~box(){
+                    if(this->siguiente != 0){
+                        delete this->siguiente;
+                    }
+
                 };
                 T getElemento(){
                     return this->elemento;
-                }
+                };
                 void print(){
-                    cout << elemento << ", " <<endl;
+                    cout << elemento << ", ";
                     if(this->siguiente != 0){
                         (this->siguiente)->print();
                     }
                 }
         };
-        box primero;
-        box ultimo;
+
 
     public:
         DiccionarioLSE(){
             this->primero = 0;
             this->ultimo = 0;
+            numeroElementos = 0;
         }
         ~DiccionarioLSE(){
             delete primero;
@@ -44,7 +50,7 @@ class DiccionarioLSE  {
             this->primero = 0;
             this->ultimo = 0;
         }
-        int vacio(){
+        int vacia(){
             return !numeroElementos;
         }
         void agregar(T elemento){
@@ -66,23 +72,30 @@ class DiccionarioLSE  {
         void borrar(T elemento){
             if(!vacia()){
                 int encontrado = 0;
-                box* p = primera;
+                box* p = primero;
                 if(p->elemento == elemento){ // Caso donde el que vamos a borrar es el primero
                     encontrado = 1;
-                    primera = p->siguiente;
+                    primero = p->siguiente;
                     p->siguiente = 0;
 
                     delete p;
                 }else{
-                    while(p != 0 && !encontrado){ // Si está en el medio de todo, vamos a buscarlo con posición atrasada
+
+                    while(p->siguiente != 0 && !encontrado){ // Si está en el medio de todo, vamos a buscarlo con posición atrasada
                         if((p->siguiente)->elemento == elemento){
                             encontrado = 1;
+                        }else{
+                            p = p->siguiente;
                         }
-                        p = p->siguiente;
-
                     }
                     if(encontrado){
-
+                        box* victima = p->siguiente;
+                        p->siguiente = victima->siguiente;
+                        victima->siguiente = 0;
+                        delete victima;
+                        if(p->siguiente == 0){
+                            ultimo = p;
+                        }
                     }
 
                 }
@@ -94,7 +107,6 @@ class DiccionarioLSE  {
             }
         }
         int pertenece(T elemento){
-
             int encontrado = 0;
             if (!vacia()){
                 box* p = primero;
@@ -112,7 +124,7 @@ class DiccionarioLSE  {
             return numeroElementos;
         }
         ostream& imprimir (ostream& salida){
-
+            primero->print();
             return salida;
         }
 };
