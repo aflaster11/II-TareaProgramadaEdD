@@ -7,6 +7,6 @@ class Algoritmos{
 	public:
 		int iguales(Grafo*);
 		Grafo*  copiar(Grafo*,Grafo*);
-}
+};
 
 #endif
