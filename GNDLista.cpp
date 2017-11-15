@@ -2,18 +2,34 @@
 #include <iostream>
 using namespace std;
 
-    Vertice(char);
-    ~Vertice();
+    Vertice(char){
 
-    Arista(Vertice*, Vertice*, int);
-    ~Arista();
+    }
+    ~Vertice(){
+
+    }
+
+    Arista(Vertice*, Vertice*, int){
+
+    }
+    ~Arista(){
+
+    }
 
     public:
-        GNDLista();
-        ~GNDLista();
-        void vaciar();
-        int vacia();
-        Vertice agrVertice (char); // Cambiar el return a vértice
+        Grafo(){
+
+        }
+        ~Grafo(){
+
+        }
+        void vaciar(){
+
+        }
+        int vacia(){
+
+        }
+        Vertice agrVertice (char) // Cambiar el return a vértice
         int peso(Vertice,Vertice);
         void agrArista(Vertice,Vertice,int);
         void modificarPeso(Vertice,Vertice, int);

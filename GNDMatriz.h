@@ -20,8 +20,8 @@ class Grafo {
                 ~Arista();
         }
     public:
-        GNDLista();
-        ~GNDLista();
+        Grafo();
+        ~Grafo();
         void vaciar();
         int vacia();
         Vertice* agrVertice (char); // Cambiar el return a vértice
