@@ -36,43 +36,61 @@ void Menu::obGrafos(){
 
     switch (instruccion) {
         case 0:
+            Salir();
         break;
         case 1:
-
+            iniciar();
         break;
         case 2:
+            destruir();
         break;
         case 3:
+            vaciar();
         break;
         case 4:
+            vacia();
         break;
         case 5:
+            agrVertice();
         break;
         case 6:
+            agrArista();
         break;
         case 7:
+            elimVertice();
         break;
         case 8:
+            elimArista();
         break;
         case 9:
+            modificarEtiqueta();
         break;
         case 10:
+            modificarPeso();
         break;
         case 11:
+            peso();
         break;
         case 12:
+            numVertices();
         break;
         case 13:
+            numVerticesAdy();
         break;
         case 14:
+            adyacentes():
         break;
         case 15:
+            primerVertice();
         break;
         case 16:
+            siguienteVertice();
         break;
         case 17:
+            primerVertice();
         break;
         case 18:
+            siguienteVerticeAdy();
         break;
     }
 }
@@ -99,6 +117,66 @@ void Menu::InstruccionesOB(){
     Cout<<" (17) -> Para ver el primer Vértice adyacente a un vértice "<<endl;
     Cout<<" (18) -> Para ver el siguiente Vértice adyacente a un vértice"<<endl;
 }
+void Menu::Salir(){
+
+}
+void Menu::iniciar(){
+
+}
+void Menu::destruir(){
+
+}
+void Menu::vaciar(){
+
+}
+void Menu::vacia(){
+
+}
+void Menu::agrVertice (){
+
+}
+void Menu::peso(){
+
+}
+void Menu::agrArista(){
+
+}
+void Menu::modificarPeso(){
+
+}
+void Menu::elimVertice(){
+
+}
+void Menu::elimArista(){
+
+}
+void Menu::modificarEtiqueta(){
+
+}
+void Menu::etiqueta(){
+
+}
+void Menu::numVertices(){
+
+}
+void Menu::numVerticesAdy(){
+
+}
+void Menu::adyacentes(){
+
+}
+void Menu::primerVertice(){
+
+}
+void Menu::siguienteVertice(){
+
+}
+void Menu::primerVerticeAdy(){
+
+}
+void Menu::siguienteVerticeAdy(){
+
+}
 
 void Menu::algoritmosGrafos(){
     InstruccionesAlgoritmos();
@@ -106,21 +184,27 @@ void Menu::algoritmosGrafos(){
     cin >> instruccion;
     switch (instruccion) {
         case 0:
-
+            Salir();
         case 1:
-
+            dijkstra();
         break;
         case 2:
+            floyd();
         break;
         case 3:
+            prim();
         break;
         case 4:
+            kruskal();
         break;
         case 5:
+            copiar();
         break;
         case 6:
+            iguales();
         break;
         case 7:
+            problemaDelVendedor();
         break;
     }
 }
@@ -135,4 +219,26 @@ void Menu::InstruccionesAlgoritmos(){
     Cout<<" (5) -> Copiar un grafo" <<endl;
     Cout<<" (6) -> Averiguar si dos grafos son iguales" <<endl;
     Cout<<" (7) -> Resolver el Problema del Vendedor mediante Búsqueda Exhaustiva Pura" <<endl;
+}
+
+void Menu::dijkstra (){
+
+}
+void Menu::floyd (){
+
+}
+void Menu::prim (){
+
+}
+void Menu::kruskal (){
+
+}
+void Menu::copiar (){
+
+}
+void Menu::iguales (){
+
+}
+void Menu::problemaDelVendedor (){
+
 }
